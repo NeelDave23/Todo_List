@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome <%=name %>
+    </h1>
+    <h2>
+        ToDo List
+    </h2>
+    <br>
+    <ul>
+        <% for(let i=0;i< task_count;i++){ %>
+            <li>
+                <%=tasks[i] %>
+            </li>
+            <% } %>
+    </ul>
+
+
+
+    <!-- <form action="/todo/addtask" method="post">
+        <div>
+            <label> Task Details </label> <br> <br>
+        </div>
+        <div>
+            <textarea id="w3review" name="w3review" rows="4" cols="50"
+                placeholder="Enter Your Task Here ...."></textarea> <br>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form> -->
+
+    <a href="/todo/addtask/<%=user_id  %>">Want To Add More Tasks ?</a> <br> <br>
+    <a href="/todo/deletetask/<%=user_id %>">Want to Delete Some Tasks ?</a> <br> <br>
+    <a href="/todo/updatetask/<%=user_id  %>">Want to Update any Tasks ? </a><br> <br>
+    <a href="/todo/profile/<%=user_id %>">View Your Profile </a> <br> <br>
+
+    <!-- <a href="/todo/addtask/">Want To Add More Tasks ?</a> -->
+
+</body>
+
+</html>

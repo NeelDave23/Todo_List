@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1> Delete Task Page </h1>
+    <h3> Select the Task You Want to Delete</h3> <br>
+
+    <form action="/todo/deletetask/<%=user_id  %>" method="post">
+        <% for(let i=0;i< task_count;i++){ %>
+            <input type="checkbox" name="checkbox" id="<%=tasks[i] %>" value="<%=tasks[i] %>">
+            <label for="<%=tasks[i] %>">
+                <%=tasks[i] %>
+            </label><br>
+
+            <% } %>
+                <br>
+                <input type="submit" value="Delete">
+    </form>
+    <br><br>
+    <a href="/todo/deletealltasks/<%=user_id %>">Want to Delete all the Tasks ?</a>
+
+</body>
+
+</html>

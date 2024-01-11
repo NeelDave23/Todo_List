@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Add Task Page </h3>
+    <h2>
+        <%user_id%>
+    </h2>
+    <form action="/todo/addtask/<%=user_id  %>" method="post">
+        <div>
+            <label> Task Details </label> <br> <br>
+        </div>
+        <div>
+            <textarea id="task" name="task" rows="4" cols="50" placeholder="Enter Your Task Here ...."></textarea> <br>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

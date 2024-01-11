@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome <%=name %>
+    </h1>
+    Your Email Address is :- <%=email %> <br><br>
+
+        You Created Your Account At:- <%=created_at %> <br><br>
+
+            You Update Your Account At :- <%=updated_at %> <br><br>
+
+                Last Login Time is :- <%=last_login %><br><br>
+
+
+                    Your Position is :- <%=position %>
+                        <br> <br>
+                        <h3> Want to Change Profile ? </h3>
+
+                        <form action="/todo/profile/<%=user_id  %>" method="post">
+                            <div>
+                                <input type="text" id="name" name="name" placeholder="Name" required>
+
+                            </div><br>
+                            <div>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                            </div><br>
+                            <!-- <div>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+
+    </div><br> -->
+
+
+
+
+
+                            <input type="submit" value="Update">
+
+                            <br>
+
+                        </form>
+
+                        <br> <br>
+                        <a href="/todo/deleteuser/<%=user_id %>">Delete the User? </a> <br> <br>
+                        <a href="/todo/logout"> Log Out </a><br> <br>
+                        <a href="/todo/changepass/<%=user_id %>">Change Password? </a>
+</body>
+
+</html>

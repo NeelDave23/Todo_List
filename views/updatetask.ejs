@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1> Update Page </h1>
+    <h3> Select the Task You Want to Update </h3> <br>
+
+    <form action="/todo/updatetask/<%=user_id  %>" method="post">
+        <% for(let i=0;i< task_count;i++){ %>
+            <input type="radio" name="radio" id="<%=tasks[i] %>" value="<%=tasks[i] %>">
+            <label for="<%=tasks[i] %>">
+                <%=tasks[i] %>
+            </label><br>
+            <% } %>
+                <br>
+                <br>
+                <div>
+                    <textarea id="task" name="task" rows="4" cols="50"
+                        placeholder="Enter Your Updated Task Here ...."></textarea> <br>
+                </div> <br> <br>
+                <input type="submit" value="Update">
+    </form>
+</body>
+
+</html>

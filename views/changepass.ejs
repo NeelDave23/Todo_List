@@ -13,9 +13,9 @@
     <h3>Hello <%=name %>
     </h3>
 
-    <form action="/todo/changepass/<%=user_id  %>" method="post">
+    <form action="/todo/resetpassword/<%=user_id  %>/<%= token %>" method="post">
         <div>
-            <input type="password" id="password" name="password" placeholder="Enter Your Old Password" required>
+            <input type="password" id="password" name="password" placeholder="Enter Your New Password" required>
 
         </div><br>
         <input type="submit" value="Submit">

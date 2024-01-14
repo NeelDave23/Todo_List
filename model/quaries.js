@@ -19,6 +19,9 @@ const task_admin = "SELECT (task) FROM task_details";
 const user_admin = "SELECT (user_id) FROM task_details";
 const users_name_admin = "SELECT (name) FROM users";
 const user_count_admin = "SELECT COUNT(*)  FROM users";
+const deleteallusersbyadmin = "DELETE FROM users";
+const deletetaskbytaskid = "DELETE FROM task_details WHERE task_id=$1";
+const deleteAllTaskByAdmin = "DELETE FROM task_details";
 
 module.exports = {
   signup,
@@ -41,4 +44,7 @@ module.exports = {
   user_admin,
   users_name_admin,
   user_count_admin,
+  deleteallusersbyadmin,
+  deletetaskbytaskid,
+  deleteAllTaskByAdmin,
 };

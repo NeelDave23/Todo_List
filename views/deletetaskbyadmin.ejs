@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Delete Task Page</h1>
+
+    <form action="/todo/deletetaskbyadmin" method="post">
+        <div>
+            <textarea id="task_id" name="task_id" rows="1" cols="40" placeholder="Enter task ID "></textarea>
+            <br>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+    <br>
+    <a href="/todo/deleteAllTaskOfOneUserByAdmin">Want to Delete all the task of any Particular user ? </a> <br> <br>
+    <a href="/todo/deleteAllTaskByAdmin">Want to Delete all the task ? </a> <br> <br>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const route = require("./routes/routes");
 let cookieParser = require("cookie-parser");
-
+require("./model/dbUpdated");
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));

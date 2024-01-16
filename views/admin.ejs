@@ -23,7 +23,10 @@
     <ul>
         <% for(let i=0;i< user_count;i++){ %>
             <li>
-                <%=user_name[i] %> %>
+                <!-- <a href="/todo/taskbyidadmin/<%=all_usersbyid[i]  %>"> -->
+                <%=user_name[i] %>
+                    <!-- </a>  -->
+                    ID is :- <%=all_usersbyid[i] %>
             </li>
             <% } %>
     </ul>

@@ -1,40 +1,46 @@
 const { Router } = require("express");
 const controllers = require("../controller/controller");
+const authenticate = require("../controller/authentication");
+const admin = require("../controller/admin");
+const profile = require("../controller/profile");
 const router = Router();
 
-router.get("/", controllers.gettodos);
-router.get("/login", controllers.login);
-router.get("/signup", controllers.signup);
-router.post("/signup", controllers.postsignup);
-router.post("/login", controllers.postlogin);
+router.get("/", controllers.gettodos); // Home
+
+router.get("/login", authenticate.login);
+router.get("/signup", authenticate.signup); // Authentiate.js
+router.post("/signup", authenticate.postsignup);
+router.post("/login", authenticate.postlogin);
+
 router.get("/addtask/:id", controllers.addtask);
 router.post("/addtask/:id", controllers.postaddtask);
 router.get("/deletetask/:id", controllers.deletetask);
-router.post("/deletetask/:id", controllers.postdeletetask);
+router.post("/deletetask/:id", controllers.postdeletetask); // Controllers.js
 router.get("/updatetask/:id", controllers.updatetask);
 router.post("/updatetask/:id", controllers.postupdatetask);
-router.get("/deleteuser/:id", controllers.deleteuser);
 router.get("/deletealltasks/:id", controllers.deletealltasks);
-router.get("/profile/:id", controllers.profile);
-router.post("/profile/:id", controllers.postprofile);
-router.get("/changepass/:id", controllers.changepass);
-router.post("/changepass/:id", controllers.postchangepass);
-router.get("/resetpassword/:id/:token", controllers.linkpass);
-router.post("/resetpassword/:id/:token", controllers.resetpass);
-router.get("/logout", controllers.logout);
-router.get("/deleteuserbyadmin", controllers.deleteuserbyadmin);
-router.post("/deleteuserbyadmin", controllers.postdeleteuserbyadmin);
-router.get("/deletealluserbyadmin", controllers.deletealluserbyadmin);
-router.get("/deletetaskbyadmin", controllers.deletetaskbyadmin);
-router.post("/deletetaskbyadmin", controllers.postdeletetaskbyadmin);
+
+router.get("/profile/:id", profile.profile);
+router.post("/profile/:id", profile.postprofile);
+router.get("/changepass/:id", profile.changepass); // Profile.js
+router.get("/resetpassword/:id/:token", profile.linkpass);
+router.post("/resetpassword/:id/:token", profile.resetpass);
+router.get("/deleteuser/:id", profile.deleteuser);
+router.get("/logout", profile.logout);
+
+router.get("/deleteuserbyadmin", admin.deleteuserbyadmin);
+router.post("/deleteuserbyadmin", admin.postdeleteuserbyadmin);
+router.get("/deletealluserbyadmin", admin.deletealluserbyadmin); // Admin.js
+router.get("/deletetaskbyadmin", admin.deletetaskbyadmin);
+router.post("/deletetaskbyadmin", admin.postdeletetaskbyadmin);
 router.get(
   "/deleteAllTaskOfOneUserByAdmin",
-  controllers.deleteAllTaskOfOneUserByAdmin
+  admin.deleteAllTaskOfOneUserByAdmin
 );
 router.post(
   "/deleteAllTaskOfOneUserByAdmin",
-  controllers.postdeleteAllTaskOfOneUserByAdmin
+  admin.postdeleteAllTaskOfOneUserByAdmin
 );
+router.get("/deleteAllTaskByAdmin", admin.deleteAllTaskByAdmin);
 
-router.get("/deleteAllTaskByAdmin", controllers.deleteAllTaskByAdmin);
 module.exports = router;
